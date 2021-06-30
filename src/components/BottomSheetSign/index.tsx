@@ -65,14 +65,13 @@ const BottomSheetSign = ({ data, BottomRef, onPressClose }: BottomSheetSignDataP
                     </View>
                     <ScrollView style={styles.ViewDescription}>
                         <Text style={styles.TxtDescription}>{data?.description}</Text>
-                        <TouchableOpacity
+                    </ScrollView>
+                    <View>
+                    <TouchableOpacity
                             style={styles.ViewButtonSign}
                         >
                             <Text style={styles.TxtButtonSigns}>Veja o horóscopo de outros signos!</Text>
                         </TouchableOpacity>
-                    </ScrollView>
-                    <View>
-
                     </View>
                 </View>
             </BottomSheet>

@@ -72,13 +72,14 @@ export const styles = StyleSheet.create({
         textAlign: 'center'
     },
     ViewDescription: {
-
+        
     },
     TxtDescription: {
         fontFamily: 'RobotoRegular',
         fontSize: 15,
         color: Colors.Secondary,
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingBottom: 10,
     },
     ViewButtonSign: {
         marginTop: 25,
