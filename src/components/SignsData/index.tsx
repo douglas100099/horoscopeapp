@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Colors } from '../../constants/styles';
 
 import { styles } from './styles';
@@ -19,9 +19,10 @@ import CapricornioSVG from '../../../assets/svg/signsIcons/CapricornioSVG';
 
 interface SignsDataProps {
     data: HoroscopesArrayResultProps;
+    onPress: () => void;
 };
 
-const SignsData = ({ data }: SignsDataProps) => {
+const SignsData = ({ data, onPress }: SignsDataProps) => {
 
     const renderSign = (sign: string) => {
         switch (sign) {
@@ -107,12 +108,15 @@ const SignsData = ({ data }: SignsDataProps) => {
     };
 
     return (
-        <View style={styles.CardView}>
+        <TouchableOpacity 
+            style={styles.CardView}
+            onPress={onPress}
+        >
             {renderSign(data.sign)}
             <View style={styles.ViewTextSign}>
                 <Text style={styles.TxtSign}>{data?.sign}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
 
     );
 };

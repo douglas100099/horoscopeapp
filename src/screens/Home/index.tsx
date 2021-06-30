@@ -1,14 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import { HoroscopeContext } from '../../contexts/horoscopeContext';
-import { Header, SignsData } from '../../components';
+import { BottomSheetSign, Header, SignsData } from '../../components';
 
 import { styles } from './styles';
+import BottomSheet from '@gorhom/bottom-sheet';
 
-const Home = () => {
+const Home = ({ navigation }: any) => {
   const { horoscopes } = useContext(HoroscopeContext);
   const [data, setData] = useState<ResultDataProps['horoscopes']>();
+  const [itemSelected, setItemSelected] = useState<HoroscopesArrayResultProps>();
+  const bottomSheetRef = useRef<BottomSheet>(null);
 
   useEffect(() => {
     if (horoscopes != undefined) {
@@ -18,8 +21,21 @@ const Home = () => {
 
   const renderData = ({ item, index }: { item: HoroscopesArrayResultProps, index: number }) => {
     return (
-      <SignsData key={index.toString()} data={item} />
+      <SignsData onPress={() => { renderBottomSheet(item) }} key={index.toString()} data={item} />
     );
+  };
+
+  const renderBottomSheet = (item: HoroscopesArrayResultProps) => {
+    if (item) {
+      navigation.setOptions({ tabBarVisible: false });
+      setItemSelected(item);
+      bottomSheetRef?.current?.snapTo(1);
+    };
+  };
+
+  const closeBottomSheet = () => {
+    navigation.setOptions({ tabBarVisible: true });
+    bottomSheetRef?.current?.snapTo(0);
   };
 
   return (
@@ -41,6 +57,11 @@ const Home = () => {
           }}
         />
       </View>
+      <BottomSheetSign
+        BottomRef={bottomSheetRef}
+        data={itemSelected}
+        onPressClose={() => closeBottomSheet()}
+      />
     </View>
   );
 };
