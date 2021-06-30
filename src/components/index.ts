@@ -1,11 +1,9 @@
 import AppLoading from "./AppLoading";
-import Search from "./Search";
-import DimissKeyboard from "./DimissKeyboard";
-import Cards from "./Cards";
+import Header from "./Header";
+import SignsData from "./SignsData";
 
 export {
     AppLoading,
-    Search,
-    DimissKeyboard,
-    Cards
+    Header,
+    SignsData
 }

@@ -26,10 +26,9 @@ const App = () => {
   const _loadResourcesAsync = async () => {
     return Promise.all([
       Font.loadAsync({
-        'PopRegular': require('./assets/fonts/Poppins-Regular.ttf'),
-        'PopLight': require('./assets/fonts/Poppins-Light.ttf'),
-        'PopBold': require('./assets/fonts/Poppins-Bold.ttf'),
-        'PopMedium': require('./assets/fonts/Poppins-Medium.ttf'),
+        'RobotoRegular': require('./assets/fonts/Roboto-Regular.ttf'),
+        'RobotoMedium': require('./assets/fonts/Roboto-Medium.ttf'),
+        'RobotoBold': require('./assets/fonts/Roboto-Bold.ttf'),
       }),
     ]);
   };

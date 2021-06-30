@@ -6,43 +6,30 @@ import { Colors } from "../../constants/styles";
 export const styles = StyleSheet.create({
     Container: {
         flex: 1,
-        backgroundColor: Colors.Primary
+        backgroundColor: Colors.White
     },
-    Header: {
-        height: isSmallDevice ? 240 : 350,
-        width: '100%',
-        backgroundColor: Colors.Primary,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    TextTitleHeader: {
-        fontFamily: 'PopMedium',
-        fontSize: isSmallDevice ? 14 : 16,
-        color: Colors.White,
-    },
-    ViewHeaderTxt: {
-        margin: 10,
-        padding: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    TextNameApp: {
-        fontFamily: 'PopBold',
-        fontSize: isSmallDevice ? 22 : 30,
-        color: Colors.White,  
-    },
-    ViewInfos: {
+    ViewBody: {
         flex: 1,
-        backgroundColor: Colors.Primary,
+        backgroundColor: Colors.White,
+        padding: 20,
     },
-    ViewTxtInfos: {
-        padding: 25,
-        alignItems: 'center'
+    ViewBodyTitle: {
+        marginTop: 5,
+        maxHeight: 45,
+        justifyContent: 'center',
     },
-    TxtTitleInfos: {
-        fontFamily: 'PopBold',
-        color: Colors.White,
-        fontSize: isSmallDevice ? 18 : 22,
-        textAlign: 'center'
-    }
+    TxtTitleBody: {
+        fontFamily: 'RobotoRegular',
+        fontSize: 15,
+        color: Colors.Secondary,
+        textAlign: 'left'
+    },
+    ScrollView: {
+        marginTop: 15,
+    },
+    MainView: {
+        flex: 1,
+        backgroundColor: Colors.White,
+        flexDirection: 'row',
+    },
 })

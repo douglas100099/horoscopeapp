@@ -1,51 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { View, Text, FlatList } from 'react-native';
-import { Cards, DimissKeyboard, Search } from '../../components';
+import React, { useContext, useEffect, useState } from 'react';
+import { View, Text, ScrollView, FlatList } from 'react-native';
+import { HoroscopeContext } from '../../contexts/horoscopeContext';
+import { Header, SignsData } from '../../components';
 
 import { styles } from './styles';
 
 const Home = () => {
+  const { horoscopes } = useContext(HoroscopeContext);
+  const [data, setData] = useState<ResultDataProps['horoscopes']>();
 
-  const renderItem = () => {
+  useEffect(() => {
+    if (horoscopes != undefined) {
+      setData(horoscopes.result[0].horoscopes);
+    }
+  }, [horoscopes]);
+
+  const renderData = ({ item, index }: { item: HoroscopesArrayResultProps, index: number }) => {
     return (
-      <Cards />
-    )
+      <SignsData key={index.toString()} data={item} />
+    );
   };
 
-  /*const handleSearch = (query:string) => {
-    if(query.length > 0){
-      const filtered = data.filter((task:any) =>  task.name.includes(query))
-      console.log(filtered);
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(data);
-    };
-  };*/
-
   return (
-    <DimissKeyboard>
-      <View style={styles.Container}>
-        <StatusBar style='light' />
-        <View style={styles.Header}>
-          <View style={styles.ViewHeaderTxt}>
-            <Text style={styles.TextTitleHeader}>Bem vindo ao</Text>
-            <Text style={styles.TextNameApp}>Horóscopo</Text>
-          </View>
-          <Search />
+    <View style={styles.Container}>
+      <StatusBar style='dark' />
+      <Header />
+      <View style={styles.ViewBody}>
+        <View style={styles.ViewBodyTitle}>
+          <Text style={styles.TxtTitleBody}>Escolha um signo e descubra o horóscopo do dia!</Text>
         </View>
-        <View style={styles.ViewInfos}>
-          <View style={styles.ViewTxtInfos}>
-            <Text style={styles.TxtTitleInfos}>Selecione seu signo</Text>
-          </View>
-          <FlatList
-            //data={filteredData ? filteredData : []}
-            renderItem={renderItem}
-            keyExtractor={(item: any, index: any) => item.id.toString()}
-          />
-        </View>
+        <FlatList
+          data={data ? data : []}
+          renderItem={renderData}
+          horizontal={false}
+          numColumns={3}
+          keyExtractor={(item: any, index: any) => index.toString()}
+          style={{
+            marginTop: 25,
+          }}
+        />
       </View>
-    </DimissKeyboard>
+    </View>
   );
 };
 

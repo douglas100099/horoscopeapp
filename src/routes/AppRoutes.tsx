@@ -1,21 +1,19 @@
 import React, { ReactNode } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   Home
 } from '../screens';
 
-const App = createStackNavigator();
+const Tab = createBottomTabNavigator();
 const AppRoute = () => {
   return (
-    <App.Navigator initialRouteName={'Home'}>
-      <App.Screen
-        name="Home"
-        component={Home}
-        options={{
-          headerShown: false,
-        }}
-      />
-    </App.Navigator>
+    <Tab.Navigator initialRouteName={'Home'}>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Carteira" component={Home} />
+      <Tab.Screen name="Color Match" component={Home} />
+      <Tab.Screen name="Closet" component={Home} />
+      <Tab.Screen name="Descontos" component={Home} />
+    </Tab.Navigator>
   );
 }
 
