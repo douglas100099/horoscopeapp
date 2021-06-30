@@ -4,18 +4,18 @@ import { Colors } from '../../constants/styles';
 
 import { styles } from './styles';
 
-import AquarioSVG from '../../../assets/svg/AquarioSVG';
-import PeixesSVG from '../../../assets/svg/PeixesSVG';
-import AriesSVG from '../../../assets/svg/AriesSVG';
-import TouroSVG from '../../../assets/svg/TouroSVG';
-import GemeosSVG from '../../../assets/svg/GemeosSVG';
-import CancerSVG from '../../../assets/svg/CancerSVG';
-import LeaoSVG from '../../../assets/svg/LeaoSVG';
-import VirgemSVG from '../../../assets/svg/VirgemSVG';
-import LibraSVG from '../../../assets/svg/LibraSVG';
-import EscorpiaoSVG from '../../../assets/svg/EscorpiaoSVG';
-import SagitarioSVG from '../../../assets/svg/SagitarioSVG';
-import CapricornioSVG from '../../../assets/svg/CapricornioSVG';
+import AquarioSVG from '../../../assets/svg/signsIcons/AquarioSVG';
+import PeixesSVG from '../../../assets/svg/signsIcons/PeixesSVG';
+import AriesSVG from '../../../assets/svg/signsIcons/AriesSVG';
+import TouroSVG from '../../../assets/svg/signsIcons/TouroSVG';
+import GemeosSVG from '../../../assets/svg/signsIcons/GemeosSVG';
+import CancerSVG from '../../../assets/svg/signsIcons/CancerSVG';
+import LeaoSVG from '../../../assets/svg/signsIcons/LeaoSVG';
+import VirgemSVG from '../../../assets/svg/signsIcons/VirgemSVG';
+import LibraSVG from '../../../assets/svg/signsIcons/LibraSVG';
+import EscorpiaoSVG from '../../../assets/svg/signsIcons/EscorpiaoSVG';
+import SagitarioSVG from '../../../assets/svg/signsIcons/SagitarioSVG';
+import CapricornioSVG from '../../../assets/svg/signsIcons/CapricornioSVG';
 
 interface SignsDataProps {
     data: HoroscopesArrayResultProps;
@@ -28,79 +28,79 @@ const SignsData = ({ data }: SignsDataProps) => {
             case "Aquário":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#fed5d1" }]}>
-                        <AquarioSVG />
+                        <AquarioSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Peixes":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#d0e8ea" }]}>
-                        <PeixesSVG />
+                        <PeixesSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Áries":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#f9fdcb" }]}>
-                        <AriesSVG />
+                        <AriesSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Touro":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#dbec85" }]}>
-                        <TouroSVG />
+                        <TouroSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Gêmeos":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#c5e4d8" }]}>
-                        <GemeosSVG />
+                        <GemeosSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Câncer":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#edc8e9" }]}>
-                        <CancerSVG />
+                        <CancerSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Leão":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#c5cdf4" }]}>
-                        <LeaoSVG />
+                        <LeaoSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Virgem":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#ffefcb" }]}>
-                        <VirgemSVG />
+                        <VirgemSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Libra":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#f5b6ab" }]}>
-                        <LibraSVG />
+                        <LibraSVG height={'50%'} width={'50%'} />
                     </View>
                 );
             case "Escorpião":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#e5cbb9" }]}>
-                        <EscorpiaoSVG />
+                        <EscorpiaoSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Sagitário":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#c5e7ab" }]}>
-                        <SagitarioSVG />
+                        <SagitarioSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             case "Capricórnio":
                 return (
                     <View style={[styles.CardImage, { backgroundColor: "#c8deed" }]}>
-                        <CapricornioSVG />
+                        <CapricornioSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
             default:
                 return (
                     <View style={[styles.CardImage, { backgroundColor: Colors.Primary }]}>
-                        <AquarioSVG />
+                        <AquarioSVG height={'50%'} width={'50%'}/>
                     </View>
                 );
         }

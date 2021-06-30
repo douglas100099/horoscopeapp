@@ -8,7 +8,11 @@ const Tab = createBottomTabNavigator();
 const AppRoute = () => {
   return (
     <Tab.Navigator initialRouteName={'Home'}>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen 
+        name="Home" 
+        component={Home}
+        
+      />
       <Tab.Screen name="Carteira" component={Home} />
       <Tab.Screen name="Color Match" component={Home} />
       <Tab.Screen name="Closet" component={Home} />
