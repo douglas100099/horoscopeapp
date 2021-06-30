@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AppRoutes from './AppRoutes';
 
-const Route: React.FC = () => {
+const Route = () => {
   return (
     <AppRoutes />
   );

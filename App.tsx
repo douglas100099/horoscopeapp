@@ -1,5 +1,6 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 
@@ -11,6 +12,10 @@ import { AppLoading } from './src/components';
 
 const App = () => {
   const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    onLoad();
+  }, []);
 
   const onLoad = async () => {
     _loadResourcesAsync().then(() => {

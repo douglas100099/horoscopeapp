@@ -1,16 +1,16 @@
 import React, { createContext, useState, useEffect, useContext, useRef, ReactNode } from 'react';
 
 interface HoroscopeProviderProps {
-    children: ReactNode;
+  children: ReactNode;
 };
 
 interface HoroscopeDataProps {
-    //
+  //
 };
 
 export const HoroscopeContext = createContext({} as HoroscopeDataProps);
 
-export const HoroscopeProvider = ({ children } : HoroscopeProviderProps) => {
+export const HoroscopeProvider = ({ children }: HoroscopeProviderProps) => {
   return (
     <HoroscopeContext.Provider
       value={{
